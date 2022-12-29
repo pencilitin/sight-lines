@@ -6,6 +6,7 @@ class SightLinesApp extends Application.AppBase {
 
     function initialize() {
         AppBase.initialize();
+        loadProperties();
     }
 
     // onStart() is called on application start up
@@ -23,9 +24,16 @@ class SightLinesApp extends Application.AppBase {
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() as Void {
+        loadProperties();
         WatchUi.requestUpdate();
     }
 
+    public var properties = {};
+
+    private function loadProperties() {
+        properties.put(Properties.backgroundColor, Application.Properties.getValue(Properties.backgroundColor));
+        properties.put(Properties.tickRingColor, Application.Properties.getValue(Properties.tickRingColor));
+    }
 }
 
 function getApp() as SightLinesApp {

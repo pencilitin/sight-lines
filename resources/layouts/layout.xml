@@ -1,3 +1,8 @@
 <layout id="WatchFace">
     <drawable id="Background" class="BackgroundDrawable" />
+    <drawable id="TickRing" class="TickRingDrawable">
+        <param name="tickWidth">2</param>
+        <param name="fiveMinuteTickWidth">5</param>
+        <param name="tickLength">6</param>
+    </drawable>
 </layout>
