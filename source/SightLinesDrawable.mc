@@ -18,6 +18,10 @@ class SightLinesDrawable extends WatchUi.Drawable {
         return color;
     }
 
+    protected static function min(num1 as Number, num2 as Number) as Number {
+        return num1 < num2 ? num1 : num2;
+    }
+
     protected static var screenWidth as Number;
     protected static var screenHeight as Number;
     protected static var screenCenterX as Number;
