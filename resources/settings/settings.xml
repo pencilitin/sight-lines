@@ -31,6 +31,44 @@
             <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
         </settingConfig>
     </setting>
+    <setting propertyKey="@Properties.InfoColor" title="@Strings.InfoColorTitle">
+        <settingConfig type="list">
+            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
+            <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>
+            <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+        </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.LeftInfoType" title="@Strings.LeftInfoTitle">
+        <settingConfig type="list">
+            <listEntry value="-1">@Strings.InfoTypeOff</listEntry>
+            <listEntry value="0">@Strings.InfoTypeSteps</listEntry>
+            <listEntry value="1">@Strings.InfoTypeFloorsClimbed</listEntry>
+            <listEntry value="2">@Strings.InfoTypeActiveMinutes</listEntry>
+            <listEntry value="8">@Strings.InfoTypeBattery</listEntry>
+            <listEntry value="9">@Strings.InfoTypeCalories</listEntry>
+        </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.RightInfoType" title="@Strings.RightInfoTitle">
+        <settingConfig type="list">
+            <listEntry value="-1">@Strings.InfoTypeOff</listEntry>
+            <listEntry value="0">@Strings.InfoTypeSteps</listEntry>
+            <listEntry value="1">@Strings.InfoTypeFloorsClimbed</listEntry>
+            <listEntry value="2">@Strings.InfoTypeActiveMinutes</listEntry>
+            <listEntry value="8">@Strings.InfoTypeBattery</listEntry>
+            <listEntry value="9">@Strings.InfoTypeCalories</listEntry>
+        </settingConfig>
+    </setting>
+    <setting propertyKey="@Properties.BottomInfoType" title="@Strings.BottomInfoTitle">
+        <settingConfig type="list">
+            <listEntry value="-1">@Strings.InfoTypeOff</listEntry>
+            <listEntry value="0">@Strings.InfoTypeSteps</listEntry>
+            <listEntry value="1">@Strings.InfoTypeFloorsClimbed</listEntry>
+            <listEntry value="2">@Strings.InfoTypeActiveMinutes</listEntry>
+            <listEntry value="8">@Strings.InfoTypeBattery</listEntry>
+            <listEntry value="9">@Strings.InfoTypeCalories</listEntry>
+        </settingConfig>
+    </setting>
     <setting propertyKey="@Properties.AppVersion" title="@Strings.AppVersionTitle">
         <settingConfig type="alphaNumeric" readonly="true"/>
     </setting>

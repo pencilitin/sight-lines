@@ -4,6 +4,9 @@ import Toybox.WatchUi;
 
 class SightLinesApp extends Application.AppBase {
 
+    public static const INFO_TYPE_BATTERY as Number = 8;
+    public static const INFO_TYPE_CALORIES as Number = 9;
+
     function initialize() {
         AppBase.initialize();
         loadProperties();
@@ -36,6 +39,10 @@ class SightLinesApp extends Application.AppBase {
         properties.put(Properties.dateColor, Application.Properties.getValue(Properties.dateColor));
         properties.put(Properties.hourHandColor, Application.Properties.getValue(Properties.hourHandColor));
         properties.put(Properties.minuteHandColor, Application.Properties.getValue(Properties.minuteHandColor));
+        properties.put(Properties.infoColor, Application.Properties.getValue(Properties.infoColor));
+        properties.put(Properties.leftInfoType, Application.Properties.getValue(Properties.leftInfoType));
+        properties.put(Properties.rightInfoType, Application.Properties.getValue(Properties.rightInfoType));
+        properties.put(Properties.bottomInfoType, Application.Properties.getValue(Properties.bottomInfoType));
     }
 }
 
