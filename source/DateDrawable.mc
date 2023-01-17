@@ -14,7 +14,7 @@ class DateDrawable extends SightLinesDrawable {
         var date = Lang.format("$1$ $2$", [today.day_of_week, today.day]);
         
         // Draw date.
-        dc.setColor(getColor(Properties.dateColor), Graphics.COLOR_TRANSPARENT);
+        dc.setColor(getColor(Properties.infoColor), Graphics.COLOR_TRANSPARENT);
         dc.drawText(screenCenterX, dateY, Graphics.FONT_SMALL, date, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
     }
     

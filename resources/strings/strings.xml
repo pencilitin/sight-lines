@@ -5,10 +5,10 @@
     <string id="TickRingColorTitle">Tick Ring Color</string>
     <string id="HourHandColorTitle">Hour Hand Color</string>
     <string id="MinuteHandColorTitle">Minute Hand Color</string>
-    <string id="InfoColorTitle">Information Color</string>
-    <string id="LeftInfoTitle">Left-Hand Information</string>
-    <string id="RightInfoTitle">Right-Hand Information</string>
-    <string id="BottomInfoTitle">Bottom Information</string>
+    <string id="InfoColorTitle">Data Color</string>
+    <string id="LeftInfoTitle">Data at 9 O'clock</string>
+    <string id="RightInfoTitle">Data at 3 O'clock</string>
+    <string id="BottomInfoTitle">Data at 6 O'clock</string>
 
     <string id="ColorBlack">Black</string>
     <string id="ColorDarkGray">Dark Gray</string>

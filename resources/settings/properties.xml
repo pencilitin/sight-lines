@@ -1,7 +1,6 @@
 <properties>
     <property id="BackgroundColor" type="number">0x000000</property>
     <property id="TickRingColor" type="number">0xFFFFFF</property>
-    <property id="DateColor" type="number">0xFFFFFF</property>
     <property id="HourHandColor" type="number">0xFFFFFF</property>
     <property id="MinuteHandColor" type="number">0xFFFFFF</property>
     <property id="InfoColor" type="number">0xFFFFFF</property>
