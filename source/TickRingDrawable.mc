@@ -10,6 +10,7 @@ class TickRingDrawable extends SightLinesDrawable {
         tickWidth = params[:tickWidth];
         fiveMinuteTickWidth = params[:fiveMinuteTickWidth];
         tickLength = params[:tickLength];
+        tickRingColor = getColor(Properties.tickRingColor);
 
         tickRingBuffer = new BufferedBitmap({
             :width => screenWidth,
@@ -18,11 +19,17 @@ class TickRingDrawable extends SightLinesDrawable {
     }
 
     public function draw(dc as Dc) as Void {
+        var currentTickRingColor = getColor(Properties.tickRingColor);
+        if (tickRingColor != currentTickRingColor) {
+            tickRingColor = currentTickRingColor;
+            drawTickRing(tickRingBuffer.getDc());
+        }
+        
         dc.drawBitmap(0, 0, tickRingBuffer);
     }
 
     private function drawTickRing(dc as Dc) as Void {
-        dc.setColor(getColor(Properties.tickRingColor), Graphics.COLOR_TRANSPARENT);
+        dc.setColor(tickRingColor, Graphics.COLOR_TRANSPARENT);
         var outerRadius = dc.getWidth() / 2;
         var innerRadius = outerRadius - tickLength;
 
@@ -49,4 +56,5 @@ class TickRingDrawable extends SightLinesDrawable {
     private var tickWidth as Number;
     private var fiveMinuteTickWidth as Number;
     private var tickLength as Number;
+    private var tickRingColor as ColorType;
 }
