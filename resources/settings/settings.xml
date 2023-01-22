@@ -18,6 +18,7 @@
             <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
             <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
             <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
+            <listEntry value="0x00AAFF">@Strings.ColorBlue</listEntry>
             <listEntry value="0x0000FF">@Strings.ColorDarkBlue</listEntry>
             <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
         </settingConfig>
