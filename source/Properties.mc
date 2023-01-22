@@ -1,5 +1,7 @@
 module Properties {
     const backgroundColor = "BackgroundColor";
+    const backgroundPattern = "BackgroundPattern";
+    const backgroundPatternColor = "BackgroundPatternColor";
     const tickRingColor = "TickRingColor";
     const hourHandColor = "HourHandColor";
     const minuteHandColor = "MinuteHandColor";

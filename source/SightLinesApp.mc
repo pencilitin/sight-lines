@@ -35,6 +35,8 @@ class SightLinesApp extends Application.AppBase {
 
     private function loadProperties() {
         properties.put(Properties.backgroundColor, Application.Properties.getValue(Properties.backgroundColor));
+        properties.put(Properties.backgroundPattern, Application.Properties.getValue(Properties.backgroundPattern));
+        properties.put(Properties.backgroundPatternColor, Application.Properties.getValue(Properties.backgroundPatternColor));
         properties.put(Properties.tickRingColor, Application.Properties.getValue(Properties.tickRingColor));
         properties.put(Properties.hourHandColor, Application.Properties.getValue(Properties.hourHandColor));
         properties.put(Properties.minuteHandColor, Application.Properties.getValue(Properties.minuteHandColor));

@@ -1,5 +1,7 @@
 <properties>
     <property id="BackgroundColor" type="number">0x000000</property>
+    <property id="BackgroundPattern" type="number">1</property>
+    <property id="BackgroundPatternColor" type="number">0x0000FF</property>
     <property id="TickRingColor" type="number">0xFFFFFF</property>
     <property id="HourHandColor" type="number">0xFFFFFF</property>
     <property id="MinuteHandColor" type="number">0xFFFFFF</property>
