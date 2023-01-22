@@ -64,11 +64,11 @@ class BackgroundDrawable extends SightLinesDrawable {
         dc.setPenWidth(1);
 
         var endX = screenWidth - 1;
-        for (var x = 0; x < screenWidth; x += 10) {
+        for (var x = 0; x < screenWidth; x += 12) {
             dc.drawLine(x, 0, endX, screenHeight - x - 1);
         }
         var endY = screenHeight - 1;
-        for (var y = 0; y < screenHeight; y += 10) {
+        for (var y = 0; y < screenHeight; y += 12) {
             dc.drawLine(0, y, screenWidth - y - 1, endY);
         }
 

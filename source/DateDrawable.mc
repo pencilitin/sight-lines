@@ -15,7 +15,7 @@ class DateDrawable extends SightLinesDrawable {
         
         // Draw date.
         dc.setColor(getColor(Properties.infoColor), Graphics.COLOR_TRANSPARENT);
-        dc.drawText(screenCenterX, dateY, Graphics.FONT_SMALL, date, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+        dc.drawText(screenCenterX, dateY, Graphics.FONT_MEDIUM, date, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
     }
     
     private var dateY as Number;
