@@ -1,14 +1,14 @@
 import Toybox.Graphics;
 import Toybox.Lang;
 
-class AngledLineBackgroundPattern extends BackgroundPattern {
+class StraightLineBackgroundPattern extends BackgroundPattern {
     public function initialize(color as ColorType, outerRingWidth as Number) {
         BackgroundPattern.initialize(color, outerRingWidth);
         direction = getDirection();
     }
 
     public function getType() as Number {
-        return 1;
+        return 2;
     }
 
     public function isCurrent(currentColor as ColorType) as Boolean {
@@ -33,16 +33,14 @@ class AngledLineBackgroundPattern extends BackgroundPattern {
 
         var endX = dcWidth - 1;
         var endY = dcHeight - 1;
-        if (direction == Right) {
-            for (var i = 0; i < dcWidth; i += 12) {
-                dc.drawLine(i, 0, endX, endY - i);
-                dc.drawLine(0, i, endX - i, endY);
+        if (direction == Horizontal) {
+            for (var y = 0; y < dcHeight; y += 12) {
+                dc.drawLine(0, y, endX, y);
             }
         }
         else {
-            for (var i = 0; i < dcWidth; i += 12) {
-                dc.drawLine(endX - i, 0, 0, endY - i);
-                dc.drawLine(endX, i, i, endY);
+            for (var x = 0; x < dcWidth; x += 12) {
+                dc.drawLine(x, 0, x, endY);
             }
         }
 
@@ -54,10 +52,10 @@ class AngledLineBackgroundPattern extends BackgroundPattern {
 
     private function getDirection() as Direction {
         var minute = System.getClockTime().min;
-        return (minute >= 0 && minute < 15) || (minute >= 30 && minute < 45) ? Right : Left;
+        return (minute >= 52 || minute < 7) || (minute >= 22 && minute < 37) ? Horizontal : Vertical;
     }
 
-    private enum Direction { Left, Right }
+    private enum Direction { Horizontal, Vertical }
 
     private var direction as Direction;
 }

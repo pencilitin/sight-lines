@@ -11,6 +11,7 @@
         <settingConfig type="list">
             <listEntry value="0">@Strings.SolidBackground</listEntry>
             <listEntry value="1">@Strings.AngledLinePattern</listEntry>
+            <listEntry value="2">@Strings.StraightLinePattern</listEntry>
         </settingConfig>
     </setting>
     <setting propertyKey="@Properties.BackgroundPatternColor" title="@Strings.BackgroundPatternColorTitle">

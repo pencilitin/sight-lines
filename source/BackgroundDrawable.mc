@@ -73,13 +73,15 @@ class BackgroundDrawable extends SightLinesDrawable {
 
     private static function createBackgroundPattern(backgroundPatternType as Number, backgroundPatternColor as ColorType, patternRingWidth as Number) as BackgroundPattern {
         switch (backgroundPatternType) {
-            case 0: {
-                return new SolidBackgroundPattern(backgroundPatternColor, patternRingWidth);
-            }
             case 1: {
                 return new AngledLineBackgroundPattern(backgroundPatternColor, patternRingWidth);
             }
+            case 2: {
+                return new StraightLineBackgroundPattern(backgroundPatternColor, patternRingWidth);
+            }
         }
+
+        return new SolidBackgroundPattern(backgroundPatternColor, patternRingWidth);
     }
 
     private var backgroundBuffer as BufferedBitmap;
