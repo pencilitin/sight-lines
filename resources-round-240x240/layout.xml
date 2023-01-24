@@ -22,9 +22,9 @@
         <param name="iconPadding">6</param>
     </drawable>
     <drawable id="Time" class="TimeDrawable">
-        <param name="hourHandRadiusDifference">45</param>
-        <param name="hourHandWidth">5</param>
+        <param name="hourHandRadiusDifference">50</param>
+        <param name="hourHandWidth">7</param>
         <param name="minuteHandRadiusDifference">15</param>
-        <param name="minuteHandWidth">5</param>
+        <param name="minuteHandWidth">7</param>
     </drawable>
 </layout>
