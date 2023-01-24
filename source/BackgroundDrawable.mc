@@ -79,6 +79,9 @@ class BackgroundDrawable extends SightLinesDrawable {
             case 2: {
                 return new StraightLineBackgroundPattern(backgroundPatternColor, patternRingWidth);
             }
+            case 3: {
+                return new ArcLineBackgroundPattern(backgroundPatternColor, patternRingWidth);
+            }
         }
 
         return new SolidBackgroundPattern(backgroundPatternColor, patternRingWidth);

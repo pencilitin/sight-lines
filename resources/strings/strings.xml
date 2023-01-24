@@ -31,6 +31,7 @@
     <string id="SolidBackground">Solid</string>
     <string id="AngledLinePattern">Angled Lines</string>
     <string id="StraightLinePattern">Straight Lines</string>
+    <string id="ArcLinePattern">Arc Lines</string>
 
     <string id="InfoTypeOff">Off</string>
     <string id="InfoTypeSteps">Steps</string>
