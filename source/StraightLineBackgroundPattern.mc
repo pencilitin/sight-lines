@@ -27,7 +27,7 @@ class StraightLineBackgroundPattern extends BackgroundPattern {
         }
     }
 
-    private function getDirection() as BackgroundPattern.Direction {
+    protected function getDirection() as BackgroundPattern.Direction {
         var minute = System.getClockTime().min;
         return (minute >= 52 || minute < 7) || (minute >= 22 && minute < 37) ? First : Second;
     }
