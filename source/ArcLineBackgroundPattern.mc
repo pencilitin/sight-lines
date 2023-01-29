@@ -11,7 +11,13 @@ class ArcLineBackgroundPattern extends BackgroundPattern {
     }
 
     public function isCurrent(currentColor as ColorType) as Boolean {
-        return BackgroundPattern.isCurrent(currentColor);
+        var currentDirection = getDirection();
+        if (!BackgroundPattern.isCurrent(currentColor) || direction != currentDirection) {
+            direction = currentDirection;
+            return false;
+        }
+
+        return true;
     }
 
     public function draw(dc as Dc, backgroundColor as ColorType) as Void {
@@ -24,8 +30,15 @@ class ArcLineBackgroundPattern extends BackgroundPattern {
         dc.setColor(color, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(1);
 
-        for (var r = dcHeight + dcHeight / 2; r > 0; r -= 12) {
-            dc.drawArc(dcWidth, dcHeight, r, Graphics.ARC_CLOCKWISE, 180, 90);
+        if (direction == Left) {
+            for (var r = dcHeight + dcHeight / 2; r > 0; r -= 12) {
+                dc.drawArc(dcWidth, dcHeight, r, Graphics.ARC_CLOCKWISE, 180, 90);
+            }
+        }
+        else {
+            for (var r = dcHeight + dcHeight / 2; r > 0; r -= 12) {
+                dc.drawArc(0, dcHeight, r, Graphics.ARC_CLOCKWISE, 90, 0);
+            }
         }
 
         // Clear outer ring.
@@ -33,4 +46,13 @@ class ArcLineBackgroundPattern extends BackgroundPattern {
         dc.setPenWidth(outerRingWidth);
         dc.drawCircle(dcWidth / 2, dcHeight / 2, (dcWidth - outerRingWidth) / 2);
     }
+
+    private function getDirection() as Direction {
+        var minute = System.getClockTime().min;
+        return (minute >= 15 && minute < 30) || minute >= 45 ? Left : Right;
+    }
+
+    private enum Direction { Left, Right }
+
+    private var direction as Direction;
 }
