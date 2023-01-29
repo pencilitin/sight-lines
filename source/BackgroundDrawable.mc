@@ -1,18 +1,18 @@
 import Toybox.Application;
 import Toybox.Graphics;
 import Toybox.Lang;
+import Toybox.Time;
 import Toybox.WatchUi;
 
 class BackgroundDrawable extends SightLinesDrawable {
 
     function initialize(params) {
         SightLinesDrawable.initialize(params);
+        backgroundPatternType = getApp().properties[Properties.backgroundPattern];
         backgroundColor = getColor(Properties.backgroundColor);
         patternRingWidth = params[:patternRingWidth];
-        backgroundPattern = createBackgroundPattern(
-            getApp().properties[Properties.backgroundPattern],
-            getColor(Properties.backgroundPatternColor),
-            patternRingWidth);
+        backgroundPattern = createBackgroundPattern();
+        surpriseMeDay = getDay();
         tickWidth = params[:tickWidth];
         fiveMinuteTickWidth = params[:fiveMinuteTickWidth];
         tickLength = params[:tickLength];
@@ -28,17 +28,22 @@ class BackgroundDrawable extends SightLinesDrawable {
         var currentBackgroundColor = getColor(Properties.backgroundColor);
         var currentBackgroundPatternType = getApp().properties[Properties.backgroundPattern];
         var currentBackgroundPatternColor = getColor(Properties.backgroundPatternColor);
+        var currentSurpriseMeDay = getDay();
         var currentTickRingColor = getColor(Properties.tickRingColor);
         if (backgroundColor != currentBackgroundColor ||
-            backgroundPattern.getType() != currentBackgroundPatternType ||
+            backgroundPatternType != currentBackgroundPatternType ||
             !backgroundPattern.isCurrent(currentBackgroundPatternColor) ||
+            surpriseMeDay != currentSurpriseMeDay ||
             tickRingColor != currentTickRingColor) {
 
             backgroundColor = currentBackgroundColor;
-            tickRingColor = currentTickRingColor;
-            if (backgroundPattern.getType() != currentBackgroundPatternType) {
-                backgroundPattern = createBackgroundPattern(currentBackgroundPatternType, currentBackgroundPatternColor, patternRingWidth);
+            if (backgroundPatternType != currentBackgroundPatternType || 
+                (backgroundPatternType == surpriseMePatternType && (surpriseMeDay != currentSurpriseMeDay))) {
+                backgroundPatternType = currentBackgroundPatternType;
+                surpriseMeDay = currentSurpriseMeDay;
+                backgroundPattern = createBackgroundPattern();
             }
+            tickRingColor = currentTickRingColor;
 
             backgroundPattern.draw(backgroundBuffer.getDc(), backgroundColor);
             drawTickRing(backgroundBuffer.getDc());
@@ -71,8 +76,10 @@ class BackgroundDrawable extends SightLinesDrawable {
         }
     }
 
-    private static function createBackgroundPattern(backgroundPatternType as Number, backgroundPatternColor as ColorType, patternRingWidth as Number) as BackgroundPattern {
-        switch (backgroundPatternType) {
+    private function createBackgroundPattern() as BackgroundPattern {
+        var newBackgroundPatternType = backgroundPatternType == surpriseMePatternType ? Math.rand() % 4 + 1 : backgroundPatternType;
+        var backgroundPatternColor = getColor(Properties.backgroundPatternColor);
+        switch (newBackgroundPatternType) {
             case 1: {
                 return new AngledLineBackgroundPattern(backgroundPatternColor, patternRingWidth);
             }
@@ -90,12 +97,24 @@ class BackgroundDrawable extends SightLinesDrawable {
         return new SolidBackgroundPattern(backgroundPatternColor, patternRingWidth);
     }
 
+    private static function getDay() as Number {
+        return Gregorian.info(Time.now(), Time.FORMAT_SHORT).day;
+    }
+
     private var backgroundBuffer as BufferedBitmap;
+    private var backgroundPattern as BackgroundPattern;
+    // Keep background settings used to draw background and
+    // to detect changes that force redrawing the background.
+    private var backgroundPatternType as Number;
     private var backgroundColor as ColorType;
     private var patternRingWidth as Number;
-    private var backgroundPattern as BackgroundPattern;
+    private var surpriseMeDay as Number;
+    // Keep tick ring settings used to draw tick ring and
+    // to detect changes that force redrawing the background.
     private var tickWidth as Number;
     private var fiveMinuteTickWidth as Number;
     private var tickLength as Number;
     private var tickRingColor as ColorType;
+
+    private const surpriseMePatternType = -1;
 }

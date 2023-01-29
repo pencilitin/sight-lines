@@ -6,10 +6,6 @@ class AngledLineBackgroundPattern extends BackgroundPattern {
         BackgroundPattern.initialize(color, outerRingWidth);
     }
 
-    public function getType() as Number {
-        return 1;
-    }
-
     protected function drawPattern(dc as Dc) as Void {
         var dcWidth = dc.getWidth();
         var dcHeight = dc.getHeight();

@@ -6,10 +6,6 @@ class ArcLineBackgroundPattern extends BackgroundPattern {
         BackgroundPattern.initialize(color, outerRingWidth);
     }
 
-    public function getType() as Number {
-        return 3;
-    }
-
     protected function drawPattern(dc as Dc) as Void {
         var dcWidth = dc.getWidth();
         var dcHeight = dc.getHeight();

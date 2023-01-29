@@ -25,6 +25,7 @@
             <listEntry value="2">@Strings.StraightLinePattern</listEntry>
             <listEntry value="3">@Strings.ArcLinePattern</listEntry>
             <listEntry value="4">@Strings.WaveLinePattern</listEntry>
+            <listEntry value="-1">@Strings.SurpriseMeLinePattern</listEntry>
         </settingConfig>
     </setting>
     <setting propertyKey="@Properties.BackgroundPatternColor" title="@Strings.BackgroundPatternColorTitle">

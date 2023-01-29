@@ -8,10 +8,6 @@ class BackgroundPattern {
         direction = getDirection();
     }
 
-    public function getType() as Number {
-        throw new AbstractFunctionException();
-    }
-
     public function isCurrent(currentColor as ColorType) as Boolean {
         var currentDirection = getDirection();
         if (color != currentColor || direction != currentDirection) {
