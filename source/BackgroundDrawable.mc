@@ -11,7 +11,6 @@ class BackgroundDrawable extends SightLinesDrawable {
         backgroundPatternType = getApp().properties[Properties.backgroundPattern];
         backgroundColor = getColor(Properties.backgroundColor);
         patternRingWidth = params[:patternRingWidth];
-        backgroundPattern = createBackgroundPattern();
         surpriseMeDay = getDay();
         tickWidth = params[:tickWidth];
         fiveMinuteTickWidth = params[:fiveMinuteTickWidth];
@@ -19,6 +18,7 @@ class BackgroundDrawable extends SightLinesDrawable {
         tickRingColor = getColor(Properties.tickRingColor);
 
         backgroundBuffer = new BufferedBitmap({ :width => screenWidth, :height => screenHeight });
+        backgroundPattern = createBackgroundPattern();
         backgroundPattern.draw(backgroundBuffer.getDc(), backgroundColor);
         drawTickRing(backgroundBuffer.getDc());
     }
@@ -77,7 +77,7 @@ class BackgroundDrawable extends SightLinesDrawable {
     }
 
     private function createBackgroundPattern() as BackgroundPattern {
-        var newBackgroundPatternType = backgroundPatternType == surpriseMePatternType ? Math.rand() % 4 + 1 : backgroundPatternType;
+        var newBackgroundPatternType = backgroundPatternType == surpriseMePatternType ? surpriseMeDay % 4 + 1 : backgroundPatternType;
         var backgroundPatternColor = getColor(Properties.backgroundPatternColor);
         switch (newBackgroundPatternType) {
             case 1: {
