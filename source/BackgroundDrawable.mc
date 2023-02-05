@@ -77,7 +77,7 @@ class BackgroundDrawable extends SightLinesDrawable {
     }
 
     private function createBackgroundPattern() as BackgroundPattern {
-        var newBackgroundPatternType = backgroundPatternType == surpriseMePatternType ? surpriseMeDay % 4 + 1 : backgroundPatternType;
+        var newBackgroundPatternType = backgroundPatternType == surpriseMePatternType ? surpriseMeDay % 5 + 1 : backgroundPatternType;
         var backgroundPatternColor = getColor(Properties.backgroundPatternColor);
         switch (newBackgroundPatternType) {
             case 1: {
@@ -91,6 +91,9 @@ class BackgroundDrawable extends SightLinesDrawable {
             }
             case 4: {
                 return new WaveLineBackgroundPattern(backgroundPatternColor, patternRingWidth);
+            }
+            case 5: {
+                return new CircleLineBackgroundPattern(backgroundPatternColor, patternRingWidth);
             }
         }
 
