@@ -1,4 +1,5 @@
 module Properties {
+    const theme = "Theme";
     const backgroundColor = "BackgroundColor";
     const backgroundPattern = "BackgroundPattern";
     const backgroundPatternColor = "BackgroundPatternColor";

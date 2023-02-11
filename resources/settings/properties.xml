@@ -1,11 +1,12 @@
 <properties>
-    <property id="BackgroundColor" type="number">0x000000</property>
+    <property id="Theme" type="number">1</property>
+    <property id="BackgroundColor" type="number">-1</property>
     <property id="BackgroundPattern" type="number">-1</property>
-    <property id="BackgroundPatternColor" type="number">0x00AAFF</property>
-    <property id="TickRingColor" type="number">0xFFFFFF</property>
-    <property id="HourHandColor" type="number">0xFFFFFF</property>
-    <property id="MinuteHandColor" type="number">0xFFFFFF</property>
-    <property id="InfoColor" type="number">0xFFFFFF</property>
+    <property id="BackgroundPatternColor" type="number">-1</property>
+    <property id="TickRingColor" type="number">-1</property>
+    <property id="HourHandColor" type="number">-1</property>
+    <property id="MinuteHandColor" type="number">-1</property>
+    <property id="InfoColor" type="number">-1</property>
     <property id="LeftInfoType" type="number">8</property>
     <property id="RightInfoType" type="number">1</property>
     <property id="BottomInfoType" type="number">0</property>

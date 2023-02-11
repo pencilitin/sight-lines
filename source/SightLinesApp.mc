@@ -34,6 +34,7 @@ class SightLinesApp extends Application.AppBase {
     public var properties = {};
 
     private function loadProperties() {
+        properties.put(Properties.theme, Application.Properties.getValue(Properties.theme));
         properties.put(Properties.backgroundColor, Application.Properties.getValue(Properties.backgroundColor));
         properties.put(Properties.backgroundPattern, Application.Properties.getValue(Properties.backgroundPattern));
         properties.put(Properties.backgroundPatternColor, Application.Properties.getValue(Properties.backgroundPatternColor));
