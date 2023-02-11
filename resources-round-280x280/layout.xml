@@ -18,7 +18,7 @@
     </drawable>
     <drawable id="BottomInfo" class="InfoDrawable">
         <param name="location">6</param>
-        <param name="infoY">220</param>
+        <param name="infoY">240</param>
         <param name="iconPadding">6</param>
     </drawable>
     <drawable id="Time" class="TimeDrawable">

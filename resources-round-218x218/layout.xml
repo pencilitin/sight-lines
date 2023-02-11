@@ -6,7 +6,7 @@
         <param name="tickLength">6</param>
     </drawable>
     <drawable id="Date" class="DateDrawable">
-        <param name="dateY">60</param>
+        <param name="dateY">50</param>
     </drawable>
     <drawable id="LeftInfo" class="InfoDrawable">
         <param name="location">9</param>
@@ -18,7 +18,7 @@
     </drawable>
     <drawable id="BottomInfo" class="InfoDrawable">
         <param name="location">6</param>
-        <param name="infoY">220</param>
+        <param name="infoY">178</param>
         <param name="iconPadding">6</param>
     </drawable>
     <drawable id="Time" class="TimeDrawable">
