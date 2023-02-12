@@ -35,7 +35,7 @@ class BackgroundPattern {
         var dcWidth = dc.getWidth();
         dc.setColor(backgroundColor, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(outerRingWidth);
-        dc.drawCircle(dcWidth / 2, dc.getHeight() / 2, (dcWidth - outerRingWidth) / 2);
+        dc.drawCircle(dcWidth / 2, dc.getHeight() / 2, (dcWidth - outerRingWidth) / 2 + 1);
     }
 
     protected function drawPattern(dc as Dc) as Void {
