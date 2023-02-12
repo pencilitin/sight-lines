@@ -5,13 +5,23 @@ Sight Lines is a Garmin Connect IQ watch face.
 Sight Lines is an analog watch face with large, easy-to-read day, date, and goal information.
 
 ## Features
-- Large fonts for day, date, and goal information.
-- Two customizable goals.
-- Day, date, and battery level.
-- Optional seconds display.
+- Large fonts for day, date, and data fields.
+- Three customizable data fields.
+  - Step count
+  - Floors climbed
+  - Weekly activity minutes
+  - Calories burned
+  - Battery level
+- Customizable line-based background.
+  - Angled lines
+  - Arc lines
+  - Circle lines
+  - Straight lines
+  - Wave lines
+  - Surprise me (lines change daily)
 - Low power mode support for minimal battery use.
 - Color customization.
 
 ## Credits
 Icons:
-- Step, stairs, active time, and calories icons by me
+- Step, stairs, active time, calories, and battery icons by me
