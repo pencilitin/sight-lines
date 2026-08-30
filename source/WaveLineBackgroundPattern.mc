@@ -9,8 +9,6 @@ class WaveLineBackgroundPattern extends BackgroundPattern {
     protected function drawPattern(dc as Dc) as Void {
         var dcWidth = dc.getWidth();
         var dcHeight = dc.getHeight();
-        var endX = dcWidth - 1;
-        var endY = dcHeight - 1;
         if (direction == First) {
             for (var y = 12; y < dcHeight + waveHeight; y += 12) {
                 for (var x = 0; x < dcWidth; x += wavePeriod) {
